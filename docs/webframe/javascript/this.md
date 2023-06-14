@@ -298,7 +298,7 @@ var publicAccounts = {
 publicAccounts.subscribe('小红')   // 输出结果: "小红 “”"
 
 var subscribe1 = publicAccounts.subscribe.bind({ name: 'ly', author: 'ly' }, '小明 ')
-subscribe1()       // 输出结果: "小明 Node成长指北"
+subscribe1()      
 ```
 
 ### new 绑定
