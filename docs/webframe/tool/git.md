@@ -271,10 +271,3 @@ https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html
 ## 配置多个git 账户
 https://juejin.cn/post/6844903880837300238
 
-git config --global --unset user.name
-git config --global --unset user.email
-git config --global user.name "zouyu01"
-git config --global user.email "yu.zou@sparkedu.com"
-git@ly-yuan:ly-yuan/blog.git
-
-ssh-add ~/.ssh/id_rsa_ly_githuub

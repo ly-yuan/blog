@@ -1,5 +1,5 @@
 module.exports = {
-  title: "小鱼儿的博客",
+  title: "ly@blog的博客",
   base: "/fish-vuePress/",
   description: "专注前端技术栈分享,从前端到Node.js再到数据库",
   markdown: {
@@ -191,7 +191,7 @@ module.exports = {
     nav: [
       { text: "主页", link: "/" },
       // {
-      //   text: "小鱼儿",
+      //   text: "ly@blog",
       //   items: [
       //     { text: "快速掌握node", link: "/node-quick/" },
       //     { text: "快速掌握vue", link: "/vue-quick/" }
