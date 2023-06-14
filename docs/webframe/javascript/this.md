@@ -63,8 +63,7 @@ console.log(person.work); // '程序员'
 
 ![文章概览图](https://user-gold-cdn.xitu.io/2019/9/11/16d1dc3fe9fe710a?w=880&h=966&f=jpeg&s=141780 ':size=600')
 
-> 注:本文中如不特殊说明都是，输出结果都是指浏览器中输出结果。
- Github 博客开源项目 https://github.com/koala-coding/goodBlog
+
 
 ## 函数调用
 JS（ES5）里面有三种函数调用形式：
@@ -298,7 +297,7 @@ var publicAccounts = {
 
 publicAccounts.subscribe('小红')   // 输出结果: "小红 “”"
 
-var subscribe1 = publicAccounts.subscribe.bind({ name: 'Node成长指北', author: '考拉' }, '小明 ')
+var subscribe1 = publicAccounts.subscribe.bind({ name: 'ly', author: 'ly' }, '小明 ')
 subscribe1()       // 输出结果: "小明 Node成长指北"
 ```
 
