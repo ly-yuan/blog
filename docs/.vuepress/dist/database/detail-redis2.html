@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis详细学习 进阶篇 | 小鱼儿的博客</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="专注前端技术栈分享,从前端到Node.js再到数据库">
+    
+    <link rel="preload" href="/fish-vuePress/assets/css/0.styles.af3f7b63.css" as="style"><link rel="preload" href="/fish-vuePress/assets/js/app.df5f89c4.js" as="script"><link rel="preload" href="/fish-vuePress/assets/js/5.edcfac08.js" as="script"><link rel="preload" href="/fish-vuePress/assets/js/37.e84a19da.js" as="script"><link rel="prefetch" href="/fish-vuePress/assets/js/10.b77df3ea.js"><link rel="prefetch" href="/fish-vuePress/assets/js/100.a0d590cb.js"><link rel="prefetch" href="/fish-vuePress/assets/js/101.0c4817e4.js"><link rel="prefetch" href="/fish-vuePress/assets/js/102.78764042.js"><link rel="prefetch" href="/fish-vuePress/assets/js/103.a96d5da9.js"><link rel="prefetch" href="/fish-vuePress/assets/js/104.a28a3fb7.js"><link rel="prefetch" href="/fish-vuePress/assets/js/105.2cec88b8.js"><link rel="prefetch" href="/fish-vuePress/assets/js/106.e18e3f35.js"><link rel="prefetch" href="/fish-vuePress/assets/js/107.3744efd2.js"><link rel="prefetch" href="/fish-vuePress/assets/js/108.ced67a25.js"><link rel="prefetch" href="/fish-vuePress/assets/js/109.f57e1134.js"><link rel="prefetch" href="/fish-vuePress/assets/js/11.97b74358.js"><link rel="prefetch" href="/fish-vuePress/assets/js/110.7c61f586.js"><link rel="prefetch" href="/fish-vuePress/assets/js/111.8e889bff.js"><link rel="prefetch" href="/fish-vuePress/assets/js/112.39a52113.js"><link rel="prefetch" href="/fish-vuePress/assets/js/113.dae7f961.js"><link rel="prefetch" href="/fish-vuePress/assets/js/114.2d597a8d.js"><link rel="prefetch" href="/fish-vuePress/assets/js/115.9553737f.js"><link rel="prefetch" href="/fish-vuePress/assets/js/116.063d8847.js"><link rel="prefetch" href="/fish-vuePress/assets/js/117.13e26da9.js"><link rel="prefetch" href="/fish-vuePress/assets/js/118.3529b5be.js"><link rel="prefetch" href="/fish-vuePress/assets/js/119.8792b07b.js"><link rel="prefetch" href="/fish-vuePress/assets/js/12.3ecb1de5.js"><link rel="prefetch" href="/fish-vuePress/assets/js/120.ed65532d.js"><link rel="prefetch" href="/fish-vuePress/assets/js/121.8c4731cc.js"><link rel="prefetch" href="/fish-vuePress/assets/js/122.4d92baeb.js"><link rel="prefetch" href="/fish-vuePress/assets/js/123.210e85e7.js"><link rel="prefetch" href="/fish-vuePress/assets/js/124.1e513801.js"><link rel="prefetch" href="/fish-vuePress/assets/js/125.d9e5ebae.js"><link rel="prefetch" href="/fish-vuePress/assets/js/126.107bfe67.js"><link rel="prefetch" href="/fish-vuePress/assets/js/127.14edacab.js"><link rel="prefetch" href="/fish-vuePress/assets/js/128.888bc9d6.js"><link rel="prefetch" href="/fish-vuePress/assets/js/129.92bb5f4a.js"><link rel="prefetch" href="/fish-vuePress/assets/js/13.824408f4.js"><link rel="prefetch" href="/fish-vuePress/assets/js/130.e9dca7f9.js"><link rel="prefetch" href="/fish-vuePress/assets/js/131.6bc5662c.js"><link rel="prefetch" href="/fish-vuePress/assets/js/132.1bfdc2ca.js"><link rel="prefetch" href="/fish-vuePress/assets/js/133.99f9ca2f.js"><link rel="prefetch" href="/fish-vuePress/assets/js/134.69c60897.js"><link rel="prefetch" href="/fish-vuePress/assets/js/135.85a830bc.js"><link rel="prefetch" href="/fish-vuePress/assets/js/136.b5627c7c.js"><link rel="prefetch" href="/fish-vuePress/assets/js/137.bcadb89c.js"><link rel="prefetch" href="/fish-vuePress/assets/js/14.ebcb0a05.js"><link rel="prefetch" href="/fish-vuePress/assets/js/15.d3a0b0df.js"><link rel="prefetch" href="/fish-vuePress/assets/js/16.92300b13.js"><link rel="prefetch" href="/fish-vuePress/assets/js/17.e7cd0ca8.js"><link rel="prefetch" href="/fish-vuePress/assets/js/18.9b1b98e6.js"><link rel="prefetch" href="/fish-vuePress/assets/js/19.a6853cc0.js"><link rel="prefetch" href="/fish-vuePress/assets/js/2.3e0c97ad.js"><link rel="prefetch" href="/fish-vuePress/assets/js/20.eb68a5fa.js"><link rel="prefetch" href="/fish-vuePress/assets/js/21.b3e94a5d.js"><link rel="prefetch" href="/fish-vuePress/assets/js/22.7e6803a4.js"><link rel="prefetch" href="/fish-vuePress/assets/js/23.7a26abb3.js"><link rel="prefetch" href="/fish-vuePress/assets/js/24.3a0e2284.js"><link rel="prefetch" href="/fish-vuePress/assets/js/25.2f09a139.js"><link rel="prefetch" href="/fish-vuePress/assets/js/26.fdd61db3.js"><link rel="prefetch" href="/fish-vuePress/assets/js/27.88ee342e.js"><link rel="prefetch" href="/fish-vuePress/assets/js/28.2dba197d.js"><link rel="prefetch" href="/fish-vuePress/assets/js/29.0b89f09e.js"><link rel="prefetch" href="/fish-vuePress/assets/js/3.961388cf.js"><link rel="prefetch" href="/fish-vuePress/assets/js/30.0b4504ec.js"><link rel="prefetch" href="/fish-vuePress/assets/js/31.35a942d3.js"><link rel="prefetch" href="/fish-vuePress/assets/js/32.f6f62b31.js"><link rel="prefetch" href="/fish-vuePress/assets/js/33.1fce904f.js"><link rel="prefetch" href="/fish-vuePress/assets/js/34.86a7f705.js"><link rel="prefetch" href="/fish-vuePress/assets/js/35.a0d3c71e.js"><link rel="prefetch" href="/fish-vuePress/assets/js/36.d4aa17d5.js"><link rel="prefetch" href="/fish-vuePress/assets/js/38.5a3d6630.js"><link rel="prefetch" href="/fish-vuePress/assets/js/39.72e8a86b.js"><link rel="prefetch" href="/fish-vuePress/assets/js/4.deb713bc.js"><link rel="prefetch" href="/fish-vuePress/assets/js/40.171e086b.js"><link rel="prefetch" href="/fish-vuePress/assets/js/41.3d3d2a08.js"><link rel="prefetch" href="/fish-vuePress/assets/js/42.1b56fbe9.js"><link rel="prefetch" href="/fish-vuePress/assets/js/43.55d66008.js"><link rel="prefetch" href="/fish-vuePress/assets/js/44.1f65c599.js"><link rel="prefetch" href="/fish-vuePress/assets/js/45.bd0206b1.js"><link rel="prefetch" href="/fish-vuePress/assets/js/46.aafec962.js"><link rel="prefetch" href="/fish-vuePress/assets/js/47.ac94a28e.js"><link rel="prefetch" href="/fish-vuePress/assets/js/48.2a025aa5.js"><link rel="prefetch" href="/fish-vuePress/assets/js/49.469aaa8c.js"><link rel="prefetch" href="/fish-vuePress/assets/js/50.08274f17.js"><link rel="prefetch" href="/fish-vuePress/assets/js/51.9b109d30.js"><link rel="prefetch" href="/fish-vuePress/assets/js/52.85094941.js"><link rel="prefetch" href="/fish-vuePress/assets/js/53.610ff2c3.js"><link rel="prefetch" href="/fish-vuePress/assets/js/54.1441c891.js"><link rel="prefetch" href="/fish-vuePress/assets/js/55.b8bbb84d.js"><link rel="prefetch" href="/fish-vuePress/assets/js/56.440ddff2.js"><link rel="prefetch" href="/fish-vuePress/assets/js/57.844af420.js"><link rel="prefetch" href="/fish-vuePress/assets/js/58.3394b61f.js"><link rel="prefetch" href="/fish-vuePress/assets/js/59.5e352a87.js"><link rel="prefetch" href="/fish-vuePress/assets/js/6.81d396d4.js"><link rel="prefetch" href="/fish-vuePress/assets/js/60.5ae989c0.js"><link rel="prefetch" href="/fish-vuePress/assets/js/61.0864cf11.js"><link rel="prefetch" href="/fish-vuePress/assets/js/62.c7442a3b.js"><link rel="prefetch" href="/fish-vuePress/assets/js/63.d893bc29.js"><link rel="prefetch" href="/fish-vuePress/assets/js/64.6da0341b.js"><link rel="prefetch" href="/fish-vuePress/assets/js/65.e2789671.js"><link rel="prefetch" href="/fish-vuePress/assets/js/66.5b4f4293.js"><link rel="prefetch" href="/fish-vuePress/assets/js/67.a0798723.js"><link rel="prefetch" href="/fish-vuePress/assets/js/68.53f11a09.js"><link rel="prefetch" href="/fish-vuePress/assets/js/69.63cb2a8a.js"><link rel="prefetch" href="/fish-vuePress/assets/js/7.6897ca43.js"><link rel="prefetch" href="/fish-vuePress/assets/js/70.804547f9.js"><link rel="prefetch" href="/fish-vuePress/assets/js/71.5787158b.js"><link rel="prefetch" href="/fish-vuePress/assets/js/72.946799be.js"><link rel="prefetch" href="/fish-vuePress/assets/js/73.9d9e52b5.js"><link rel="prefetch" href="/fish-vuePress/assets/js/74.28bafc8a.js"><link rel="prefetch" href="/fish-vuePress/assets/js/75.bd946076.js"><link rel="prefetch" href="/fish-vuePress/assets/js/76.a566a607.js"><link rel="prefetch" href="/fish-vuePress/assets/js/77.3e7bfce0.js"><link rel="prefetch" href="/fish-vuePress/assets/js/78.ec1d52b5.js"><link rel="prefetch" href="/fish-vuePress/assets/js/79.492d0e3b.js"><link rel="prefetch" href="/fish-vuePress/assets/js/8.49a8a0b3.js"><link rel="prefetch" href="/fish-vuePress/assets/js/80.f68ea700.js"><link rel="prefetch" href="/fish-vuePress/assets/js/81.a15fa2be.js"><link rel="prefetch" href="/fish-vuePress/assets/js/82.786ff7c0.js"><link rel="prefetch" href="/fish-vuePress/assets/js/83.6b9d4900.js"><link rel="prefetch" href="/fish-vuePress/assets/js/84.48c296d1.js"><link rel="prefetch" href="/fish-vuePress/assets/js/85.567505d3.js"><link rel="prefetch" href="/fish-vuePress/assets/js/86.1b6fdd4e.js"><link rel="prefetch" href="/fish-vuePress/assets/js/87.90cefee1.js"><link rel="prefetch" href="/fish-vuePress/assets/js/88.f7c32624.js"><link rel="prefetch" href="/fish-vuePress/assets/js/89.0f22b52a.js"><link rel="prefetch" href="/fish-vuePress/assets/js/9.7a3a195f.js"><link rel="prefetch" href="/fish-vuePress/assets/js/90.b23071bb.js"><link rel="prefetch" href="/fish-vuePress/assets/js/91.9b06412d.js"><link rel="prefetch" href="/fish-vuePress/assets/js/92.44c6f292.js"><link rel="prefetch" href="/fish-vuePress/assets/js/93.ced630dd.js"><link rel="prefetch" href="/fish-vuePress/assets/js/94.c5d880af.js"><link rel="prefetch" href="/fish-vuePress/assets/js/95.7ea00f99.js"><link rel="prefetch" href="/fish-vuePress/assets/js/96.08a9387a.js"><link rel="prefetch" href="/fish-vuePress/assets/js/97.7cf3b129.js"><link rel="prefetch" href="/fish-vuePress/assets/js/98.92843a37.js"><link rel="prefetch" href="/fish-vuePress/assets/js/99.3fad2047.js">
+    <link rel="stylesheet" href="/fish-vuePress/assets/css/0.styles.af3f7b63.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fish-vuePress/" class="home-link router-link-active"><!----> <span class="site-name">小鱼儿的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/fish-vuePress/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/fish-vuePress/node-quick/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/fish-vuePress/webframe/" class="nav-link">
+  前端基础
+</a></div><div class="nav-item"><a href="/fish-vuePress/vue-quick/" class="nav-link">
+  快速掌握vue
+</a></div><div class="nav-item"><a href="/fish-vuePress/database/" class="nav-link router-link-active">
+  数据库
+</a></div><div class="nav-item"><a href="/fish-vuePress/react/" class="nav-link">
+  react
+</a></div><div class="nav-item"><a href="/fish-vuePress/webpack/" class="nav-link">
+  webpack
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/fish-vuePress/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/fish-vuePress/node-quick/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/fish-vuePress/webframe/" class="nav-link">
+  前端基础
+</a></div><div class="nav-item"><a href="/fish-vuePress/vue-quick/" class="nav-link">
+  快速掌握vue
+</a></div><div class="nav-item"><a href="/fish-vuePress/database/" class="nav-link router-link-active">
+  数据库
+</a></div><div class="nav-item"><a href="/fish-vuePress/react/" class="nav-link">
+  react
+</a></div><div class="nav-item"><a href="/fish-vuePress/webpack/" class="nav-link">
+  webpack
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/fish-vuePress/database/choice.html" class="sidebar-link">SQL 和 NoSQL 的区别与选择</a></li><li><a href="/fish-vuePress/database/mysql/baseFrame.html" class="sidebar-link">MySQL 基础架构你不知道的那些事</a></li><li><a href="/fish-vuePress/database/mysql/logSystem.html" class="sidebar-link">删库跑路后真的没有办法弥补了吗</a></li><li><a href="/fish-vuePress/database/mysql/optimize.html" class="sidebar-link">常用的数据库语句</a></li><li><a href="/fish-vuePress/database/mysql/writeSql.html" class="sidebar-link">如何写优雅的SQL原生语句</a></li><li><a href="/fish-vuePress/database/detail-redis1.html" class="sidebar-link">详细学习redis_入门篇</a></li><li><a href="/fish-vuePress/database/detail-redis2.html" aria-current="page" class="active sidebar-link">详细学习redis_进阶篇</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fish-vuePress/database/detail-redis2.html#redis多数据库" class="sidebar-link">redis多数据库</a></li><li class="sidebar-sub-header"><a href="/fish-vuePress/database/detail-redis2.html#redis事务的概念" class="sidebar-link">redis事务的概念</a></li><li class="sidebar-sub-header"><a href="/fish-vuePress/database/detail-redis2.html#redis数据持久化" class="sidebar-link">redis数据持久化</a></li></ul></li><li><a href="/fish-vuePress/database/detail-redis3.html" class="sidebar-link">详细学习redis_项目实战篇</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="redis多数据库"><a href="#redis多数据库" class="header-anchor">#</a> redis多数据库</h2> <p>说明：一个redis实例可以包含多个数据库，客户端可以指定连接某个数据库（与MySql客户端我们创建多个数据库类似）一个redis实例最多可以提供16个数据库，下标是从0到15，默认连接的是第0号数据库。</p> <p>代码相关演示:</p> <div class="language- extra-class"><pre class="language-text"><code>127.0.0.1:6379&gt; select 1  //选择数据库1
+OK
+127.0.0.1:6379[1]&gt; keys *
+(empty list or set)
+127.0.0.1:6379[1]&gt; select 0
+OK
+127.0.0.1:6379&gt; set string1 2 
+OK
+127.0.0.1:6379&gt; keys *  //查询所有的key
+1) &quot;hsah1&quot;
+2) &quot;list1&quot;
+3) &quot;set1&quot;
+4) &quot;list2&quot;
+5) &quot;string1&quot;
+6) &quot;hash1&quot;
+7) &quot;string2&quot;
+127.0.0.1:6379&gt; move list1 1  //移动list1到数据库1
+(integer) 1
+127.0.0.1:6379&gt; move set1 1
+(integer) 1
+127.0.0.1:6379&gt; keys *
+1) &quot;hsah1&quot;
+2) &quot;list2&quot;
+3) &quot;string1&quot;
+4) &quot;hash1&quot;
+5) &quot;string2&quot;
+127.0.0.1:6379&gt; select 1 
+OK
+127.0.0.1:6379[1]&gt; keys *
+1) &quot;list1&quot;
+2) &quot;set1&quot;
+127.0.0.1:6379[1]&gt; type set1 //获取数据类型
+set
+127.0.0.1:6379[1]&gt;
+</code></pre></div><p>可以试着敲一遍，查看注释基本明白了redis多数据库的使用</p> <h2 id="redis事务的概念"><a href="#redis事务的概念" class="header-anchor">#</a> redis事务的概念</h2> <ul><li>事务的基本命令</li></ul> <p>1）multi 标记一个事务的开始</p> <p>2）exec 执行所有事务块内的命令</p> <p>3）discard 取消事务，放弃执行事务块内的所有命令</p> <ul><li>事务特性</li></ul> <p>1）事务中的命令都是串行执行的。</p> <p>2）事务执行期间redis不会再对其它的客户端提供任何服务，从而保证事务中的命令能够原子化执行。</p> <p>3）单个 Redis 命令的执行是原子性的，但 Redis 没有在事务上增加任何维持原子性的机制，所以 Redis 事务的执行并不是原子性的。事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p> <ul><li>代码实例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>redis 127.0.0.1:6379&gt; MULTI   //开启事务
+OK
+redis 127.0.0.1:6379&gt; SET book-name &quot;Mastering C++ in 21 days&quot;
+QUEUED
+redis 127.0.0.1:6379&gt; GET book-name
+QUEUED
+redis 127.0.0.1:6379&gt; SADD tag &quot;C++&quot; &quot;Programming&quot; &quot;Mastering Series&quot;
+QUEUED
+redis 127.0.0.1:6379&gt; SMEMBERS tag
+QUEUED
+redis 127.0.0.1:6379&gt; EXEC //提交事务
+1) OK
+2) &quot;Mastering C++ in 21 days&quot;
+3) (integer) 3
+4) 1) &quot;Mastering Series&quot;
+   2) &quot;C++&quot;
+   3) &quot;Programming&quot;
+</code></pre></div><h2 id="redis数据持久化"><a href="#redis数据持久化" class="header-anchor">#</a> redis数据持久化</h2> <ul><li>RDB数据持久化方式</li></ul> <blockquote><p>优势</p></blockquote> <p>1）redis数据库会只包含一个文件存储在硬盘中，对于文件备份会简单很多。</p> <p>2）对于灾难恢复，RDB是更好的选择，因为一个文件可以直接拷贝走，拷贝回来。</p> <p>3）性能最大化，redis开始持久化的时候只分出一些子进程，之后这些子进程会完成持久化工作,避免了服务器进程执行io的操作。数据集很大的时候，启动效率会更高。</p> <blockquote><p>缺点</p></blockquote> <p>1）最大限度的避免数据丢失，RDB做的不是特别好，系统一定在定时持久化之前出现一些档期的情况，还没有来得及往硬盘上写，数据已经丢失掉。</p> <p>2）因为RDB是通过开启子进程的方式来进行持久化操作的，因此当数据集比较大的时候，这个过程可能会导致服务器停止一定事件，几十毫秒甚至1秒。</p> <blockquote><p>配置</p></blockquote> <p>linux目录中/usr/local/redis/redis-conf目录中找到这样的几行代码</p> <div class="language- extra-class"><pre class="language-text"><code>save 900 1
+save 300 10
+save 60 10000
+</code></pre></div><p>第一行代码表示：900秒，也就是15分钟至少又一个key发生变化就会持久化一次。</p> <p>第二行代码表示：300秒，至少有10个key发生变化就会往硬盘中持久化一次。</p> <p>第三行代码表示：60秒，至少有10000个key发生变化就会往硬盘中持久化一次。</p> <div class="language- extra-class"><pre class="language-text"><code>dbfilename dump.rdb
+</code></pre></div><p>配置中继续往下看，看到这样一行代码，这个dump是数据库的名字。</p> <p>往下一段代码</p> <div class="language- extra-class"><pre class="language-text"><code>dir ./
+</code></pre></div><p>保存路径位置，就是当前目录下的上面的名字，就是持久化的数据库</p> <ul><li>AOF数据持久化方式</li></ul> <blockquote><p>优势</p></blockquote> <p>1)可以带来更高的数据安全性，这种数据持久化方式有三种同步策略，每秒同步，每修改同步（每一次发生数据的变化都会立即被记录到磁盘中，效率最低但是最安全），不同步。</p> <p>2）日志的写入操作是采用append追加的模式，在写入过程中即使出现服务器档期问题，也不会破坏日志文件中已经写入的内容。</p> <p>3）如果日志过大，redis可以自动启动重写机制，redis会不断的将修改的数据写入到老的磁盘当中，同时redis会创建一个新的文件来记录此期间产生了哪些修改命令被执行了。</p> <p>4）AOF包含一个格式非常清晰易于理解的日志文件，用于记录所有的修改操作。通过这个文件就可以完成数据的重建。</p> <blockquote><p>劣势</p></blockquote> <p>1）对于相同的数据集文件，AOF要比RDB文件大。</p> <p>2）根据同步策略的不同，AOF在运行效率上往往低于RDB，AOF每修改就同步到硬盘上效率肯定是没有RDB高的。</p> <div class="language- extra-class"><pre><code>&gt;   配置
+</code></pre></div><p>linux目录中/usr/local/redis/redis-conf目录中找到这样的几行代码</p> <div class="language- extra-class"><pre class="language-text"><code>appendonly no
+
+# The name of the append only file(default:&quot;appendonly.aof&quot;)
+
+appendfilename &quot;appendonly.aof&quot;
+</code></pre></div><p>如果使用AOF的持久还方式，需要把appendonly 后面的属性变为yes</p> <p>appendonly.aof是用来记录所有修改操作的文件，这个文件还可以用来进行数据的恢复等，例如一条删除操作成功后，我们在appendonly.aof文件中把删除命令去掉，重新运行redis，之前的数据又都会恢复</p> <div class="language- extra-class"><pre class="language-text"><code># appendfsync always
+appendfsync everysec
+# appendfsync no
+</code></pre></div><p>这段代码是关于同步策略的一个设置，第一条是每修改就同步持久化，第二条是每秒同步持久化一次，第三条是不同步持久化。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/fish-vuePress/database/detail-redis1.html" class="prev">
+        详细学习redis_入门篇
+      </a></span> <span class="next"><a href="/fish-vuePress/database/detail-redis3.html">
+        详细学习redis_项目实战篇
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/fish-vuePress/assets/js/app.df5f89c4.js" defer></script><script src="/fish-vuePress/assets/js/5.edcfac08.js" defer></script><script src="/fish-vuePress/assets/js/37.e84a19da.js" defer></script>
+  </body>
+</html>
