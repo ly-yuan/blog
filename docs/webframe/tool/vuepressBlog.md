@@ -360,12 +360,6 @@ manifest.json 文件
 ```
 
 
-### 配置评论
-由于之前有小伙伴说过,『“”』公众号上不能评论，所有这次我在博客中增加了评论功能，刚开始本来打算使用gitTalk, 但是我的博客采用的是部署到自己的服务器, 并没有部署成 GitHub Pages, 所有我使用的是`valine `, 它除了评论功能还可以统计阅读量, 请大家看:
-
-![](http://img.xiaogangzai.cn/vuepressBlog_20200718_7.jpg)
-
-但是我后面也会将gitTalk配置方式写出来, 方便使用gitTalk的小伙伴
 
 #### valine 使用
 点击进入 [Valine官网](https://leancloud.cn/dashboard/login.html#/signin) ，需要先注册才能使用.

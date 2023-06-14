@@ -506,7 +506,3 @@ https://mp.weixin.qq.com/s/wTkwJXlNr5CaI7uRntJ42A
 
 [Node.js 高级进阶之 fs 文件模块学习
 ](https://juejin.im/post/5d3f1664e51d4561a34618c1)
-### 关注我
-- 欢迎加我微信(coder_qi)，拉你进技术群，长期交流学习...
-- 欢迎关注「“”」,一个用心帮助你成长的公众号...
-![](http://img.xiaogangzai.cn/leading.png)

@@ -13,7 +13,7 @@ tags:
 - 清楚的记得刚找node工作和面试官聊到了事件循环，然后面试官问事件是如何产生的？什么情况下产生事件。。。
 - Events 在哪些场景应用到了？
 - 之前封装了一个 RxJava 的开源网络请求框架，也是基于发布-订阅模式，语言都是相通的，挺有趣。表情符号
-- Events 模块是我公众号 Node.js 进阶路线的一部分
+- Events 模块是我 Node.js 进阶路线的一部分
 
 作者简介：koala，专注完整的 Node.js 技术栈分享，从 JavaScript 到 Node.js,再到后端数据库，祝您成为优秀的高级 Node.js 工程师。【“”】作者，Github 博客开源项目 https://github.com/koala-coding/goodBlog
 

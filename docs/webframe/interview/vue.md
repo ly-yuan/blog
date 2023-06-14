@@ -33,8 +33,6 @@ tags:
     - [mutations](#mutations)
     - [getters](#getters)
     - [action](#action)
-  - [公众号技术栈路线](#公众号技术栈路线)
-  - [加入我们](#加入我们)
 
 
 ## 对于MVVM的理解
