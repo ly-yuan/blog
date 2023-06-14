@@ -34,18 +34,18 @@ console.log(path.resolve('./'));
 在代码pra目录下运行命令 `node node核心API/path.js`，我们可以看到结果如下：
 
 ```javascript
-/koala/Desktop/程序员成长指北/代码pra/node核心API
-/koala/Desktop/程序员成长指北/代码pra/node核心API/path.js
-/koala/Desktop/程序员成长指北/代码pra
-/koala/Desktop/程序员成长指北/代码pra
+/koala/Desktop/“”/代码pra/node核心API
+/koala/Desktop/“”/代码pra/node核心API/path.js
+/koala/Desktop/“”/代码pra
+/koala/Desktop/“”/代码pra
 ```
 然后我们有可以在`node核心API目录下`运行这个文件，`node  path.js`,运行结果如下：
 
 ```javascript
-/koala/Desktop/程序员成长指北/代码pra/node核心API
-/koala/Desktop/程序员成长指北/代码pra/node核心API/path.js
-/koala/Desktop/程序员成长指北/代码pra/node核心API
-/koala/Desktop/程序员成长指北/代码pra/node核心API
+/koala/Desktop/“”/代码pra/node核心API
+/koala/Desktop/“”/代码pra/node核心API/path.js
+/koala/Desktop/“”/代码pra/node核心API
+/koala/Desktop/“”/代码pra/node核心API
 ```
 
 对比输出结果，暂时得到的结论是
@@ -115,13 +115,13 @@ console.log(test)
 ```javascript
 const path = require('path');
 
-console.log(path.normalize('/koala/Desktop//程序员成长指北//代码pra/..'));
+console.log(path.normalize('/koala/Desktop//“”//代码pra/..'));
 ```
 
 **规范后的结果**
 
 ```javascript
-/koala/Desktop/程序员成长指北/代码pra
+/koala/Desktop/“”/代码pra
 ```
 **作用总结**
 
@@ -160,14 +160,14 @@ src/task.js
 
 ```javascript
 const path = require('path');
-console.log(path.parse('/koala/Desktop/程序员成长指北/代码pra/node核心API'));
+console.log(path.parse('/koala/Desktop/“”/代码pra/node核心API'));
 ```
 
 **运行结果**
 
 ```javascript
 { root: '/',
-  dir: '/koala/Desktop/程序员成长指北/代码pra',
+  dir: '/koala/Desktop/“”/代码pra',
   base: 'node核心API',
   ext: '',
   name: 'node核心API' 
@@ -187,8 +187,8 @@ console.log(path.parse('/koala/Desktop/程序员成长指北/代码pra/node核�
 
 ```javascript
 const path = require('path');
-console.log(path.basename('/koala/Desktop/程序员成长指北/代码pra/node核心API'));
-console.log(path.basename('/koala/Desktop/程序员成长指北/代码pra/node核心API/path.js', '.js'));
+console.log(path.basename('/koala/Desktop/“”/代码pra/node核心API'));
+console.log(path.basename('/koala/Desktop/“”/代码pra/node核心API/path.js', '.js'));
 ```
 
 **运行结果**
@@ -208,12 +208,12 @@ basename接收两个参数，第一个是`path`，第二个是`ext`(可选参数
 
 ```javascript
 const path = require('path');
-console.log(path.dirname('/koala/Desktop/程序员成长指北/代码pra/node核心API'));
+console.log(path.dirname('/koala/Desktop/“”/代码pra/node核心API'));
 ```
 **运行结果** 
 
 ```javascript
-/koala/Desktop/程序员成长指北/代码pra
+/koala/Desktop/“”/代码pra
 ```
 **作用总结**
 
@@ -284,7 +284,7 @@ console.log(path.relative('/data/demo', ''));
 ```javascript
 ../../impl/bbb
  ""
- ../../koala/Desktop/程序员成长指北/代码pra/node核心API
+ ../../koala/Desktop/“”/代码pra/node核心API
 ```
 **作用总结**
 
@@ -299,7 +299,7 @@ path.relative(from, to)
 ## 总结
 本篇文章关于路径的知识就说到这里，基础很重要的，既能节约开发时间，又能减少报错。
 
-今天就分享这么多，如果对分享的内容感兴趣，可以关注公众号「程序员成长指北」，或者加入技术交流群，大家一起讨论。
+今天就分享这么多，如果对分享的内容感兴趣，可以关注公众号「“”」，或者加入技术交流群，大家一起讨论。
 
 进阶技术路线
 
