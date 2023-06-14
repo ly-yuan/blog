@@ -527,18 +527,17 @@ module.exports = {
 set -e
 
 # 生成静态文件
-npm run docs:build
+npm run build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
-git init
 git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-# 例如 git push -f git@github.com:koala-coding/blog.git master:gh-pages 
+git push -f git@github.com:ly-yuan/blog.git main:gh-pages
+
 cd -
 ```
 
@@ -556,7 +555,7 @@ cd -
 
 本文章实现的内容都已经上传到github, 如果不想一步步进行配置的, 可以直接下载下来使用,就不用重复造轮子啦!
 
-> 需要博客源码的小伙伴可以直接「“”」公众后台回复【博客】领取，或者直接联系我。
+
 
 参考文章
 https://juejin.im/post/5c94ddf35188252d65344cfe
