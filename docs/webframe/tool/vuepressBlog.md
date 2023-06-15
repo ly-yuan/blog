@@ -536,12 +536,15 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:ly-yuan/blog.git main:gh-pages
+git push -f git@ly-yuan:ly-yuan/blog.git main:gh-pages
 
 cd -
 ```
+前提是需要给.sh 赋予可以执行的权限 chmod +x deploy.sh 
 
-**第五步: 双击 deploy.sh 运行脚本**
+当前终端执行 ./deploy.sh
+
+**第五步: 双击 deploy.sh 运行脚本**()
 
 会自动在我们的 GitHub 仓库中，创建一个名为 gh-pages 的分支，而我们要部署到 GitHub Pages 的正是这个分支
 
