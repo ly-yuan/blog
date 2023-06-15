@@ -484,6 +484,19 @@ function loadImageAsync(url) {
      });
 }
 ```
+```js
+setTimeout(() => {
+  console.log('1')
+  setTimeout(() => console.log('2'), 0)
+  Promise.resolve().then(() => console.log('3'))
+}, 0)
+new Promise(resolve => {
+  console.log('4')
+  setTimeout(() => {
+    console.log('5')
+    return resolve()
+  }, 0)
+}).then(() => console.log('6'))
 总结
 这一部分题目我从网上收集来的一些练习题，几道编程题我自己第一遍做也觉得没那么好做，但是做完感觉获益匪浅，加深了我对Promise特性和如何更好使用Promise的理解。
 所以Promise真正的学习，还是要结合具体场景实际开发运用。
