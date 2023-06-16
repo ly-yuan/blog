@@ -1,19 +1,22 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-setup:
-    runs-on: ubuntu-latest
-    steps:
-      - run: ./deploy.sh
-    - name: vuepress-deploy
-      uses: ly-yuan/blog@main
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: ly-yuan/blog
-        TARGET_BRANCH: main
-        BUILD_DIR: docs/.vuepress/dist
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./docs/.vuepress/dist
