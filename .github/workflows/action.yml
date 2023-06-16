@@ -6,13 +6,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-
+setup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ./deploy.sh
     - name: vuepress-deploy
       uses: ly-yuan/blog@main
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: ly-yuan/blog
         TARGET_BRANCH: main
-        BUILD_SCRIPT: yarn && yarn build
-        script: "./deploy.sh"
         BUILD_DIR: docs/.vuepress/dist
